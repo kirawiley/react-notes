@@ -2,24 +2,18 @@ const React = require('react')
 const store = require('./store')
 
 const NoteForm = (props) => {
-  props = store.getState()
-  let value = ''
-
+  const input = store.getState().noteInput
   const handleChange = (event) => {
-    if (value != '') {
-      store.dispatch({ type: 'INPUT_CHANGED' })
-    }
-    value = event.target.value
+    store.dispatch({ type: 'INPUT_CHANGED', text: event.target.value })
   }
-
-  const input = <input id="note-input" type="text" onChange={ handleChange }/>
 
   const newNote = () => {
-    store.dispatch({ type: 'NOTE_CREATED', text: value })
+    store.dispatch({ type: 'NOTE_CREATED', text: input })
   }
+
   return (
     <div id="form-container">
-      { input }
+      <input id="note-input" type="text" value={ input } onChange={ handleChange }/>
       <button id="submit-button" onClick={ newNote }>
         Make a Note</button>
     </div>

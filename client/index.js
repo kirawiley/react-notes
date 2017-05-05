@@ -5,9 +5,9 @@ const NotesList = require('./NotesList')
 const NoteForm = require('./NoteForm')
 const store = require('./store')
 const app = document.getElementById('container')
+window.store = store
 
 function App(props) {
-  const { noteInput } = props
   return (
     <div>
       <NotesList/>
