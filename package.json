@@ -2,11 +2,12 @@
   "name": "react-notes",
   "version": "1.0.0",
   "description": "A web app for JS developers who want to save notes about what they've learned.",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify client/index.js -o public/main.js",
-    "watch": "watchify client/index.js -v -o public/main.js -t babelify"
+    "bundle": "browserify client/index.js -o server/public/main.js",
+    "watch": "watchify client/index.js -v -o server/public/main.js -t babelify",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "redux": "^3.6.0"
