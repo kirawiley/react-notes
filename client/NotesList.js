@@ -3,8 +3,8 @@ const store = require('./store')
 
 const NotesList = (props) => {
   props = store.getState()
-  const notes = props.map((note) => {
-    return <li className="note"> {note} </li>
+  const notes = props.map((note, i) => {
+    return <li className="note" key={ i }> {note} </li>
   })
   return (
     <div id="list-container">

@@ -3,10 +3,16 @@ const store = require('./store')
 
 const NoteForm = (props) => {
   props = store.getState()
+  const input = <input type="text" />
+  const newNote = () => {
+    console.log(input.value)
+    store.dispatch({ type: 'NOTE_CREATED', text: input.value })
+  }
   return (
     <div id="form-container">
-      <input type="text">
-      <button>Make a Note</button>
+      { input }
+      <button id="submit-button" onClick={ newNote }>
+        Make a Note</button>
     </div>
   )
 }

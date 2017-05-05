@@ -2,11 +2,11 @@ const Redux = require('redux')
 const React = require('react')
 const ReactDOM = require('react-dom')
 const NotesList = require('./NotesList')
-//const NoteForm = require('./NoteForm')
+const NoteForm = require('./NoteForm')
 const store = require('./store')
 const app = document.getElementById('container')
 
-/*function App(props) {
+function App(props) {
   const { noteInput } = props
   return (
     <div>
@@ -14,11 +14,11 @@ const app = document.getElementById('container')
       <NoteForm/>
     </div>
   )
-}*/
+}
 
 function render() {
   let current = store.getState()
-  const elements = React.createElement(NotesList, current)
+  const elements = React.createElement(App, current)
   ReactDOM.render(elements, app)
 }
 
