@@ -9,8 +9,6 @@ let state = [
 
 function noteInput(state, action) {
   switch (action.type) {
-    /*case 'INPUT_CHANGED':
-      do something*/
     case 'NOTE_CREATED':
       return state.concat(action.text)
     default: return state
