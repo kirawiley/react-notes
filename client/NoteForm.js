@@ -4,7 +4,11 @@ const store = require('./store')
 const NoteForm = (props) => {
   props = store.getState()
   let value = ''
+
   const handleChange = (event) => {
+    if (value != '') {
+      store.dispatch({ type: 'INPUT_CHANGED' })
+    }
     value = event.target.value
   }
 
